@@ -1,0 +1,29 @@
+{
+  "name": "personal-website-backend-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "build:ui": "rm -rf build && cd ../personal-website && npm run build && cp -r build ../personal-website-backend",
+    "deploy": "git push heroku main",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
+    "deploy2": "git add . && git commit -m 'a' && npm run deploy",
+    "logs:prod": "heroku logs --tail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielDervishi/Personal-Website-Backend-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielDervishi/Personal-Website-Backend-/issues"
+  },
+  "homepage": "https://github.com/DanielDervishi/Personal-Website-Backend-#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}
